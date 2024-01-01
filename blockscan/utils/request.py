@@ -83,8 +83,7 @@ _async_session_cache = SessionCache(size=20)
 async def cache_async_session(endpoint_uri, session: ClientSession) -> None:
     cache_key = generate_cache_key(endpoint_uri)
     with _async_session_cache_lock:
-        evicted_items = _async_session_cache.cache(cache_key, session)
-        if evicted_items is not None:
+        if (evicted_items := _async_session_cache.cache(cache_key, session)) is not None:
             for key, session in evicted_items.items():
                 await session.close()
 
