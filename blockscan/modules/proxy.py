@@ -42,7 +42,7 @@ class Proxy(Module):
             f"{fields.TAG}"
             f"{tag}"
             f"{fields.BOOLEAN}"
-            f"true"
+            "true"
         )
 
     @staticmethod
