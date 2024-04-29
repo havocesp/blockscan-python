@@ -64,7 +64,7 @@ class SyncConnection(BaseConnection):
                 f"{self._api_key}"
             )
             sterilized_url = (
-                f"https://api.test.io/api?"
+                "https://api.test.io/api?"
                 f"{func(*args, **kwargs)}"
                 f"{fields.API_KEY}"
                 "TEST"
